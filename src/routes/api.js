@@ -1,18 +1,16 @@
 const express = require('express');
+const { createWallet, createPrediction,createJobsWinner, getPrediction,getJob } = require('../controllers/userController');
 
 const routerAPI = express.Router();
 
-// const { getUsersAPI, postCreateUserAPI,
-//     putUpdateUserAPI, deleteUserAPI
-
-// } = require('../controllers/apiController')
-
-
-// routerAPI.get('/users', getUsersAPI);
-// routerAPI.post('/users', postCreateUserAPI);
-// routerAPI.put('/users', putUpdateUserAPI);
-// routerAPI.delete('/users', deleteUserAPI);
-
-
-
-module.exports = routerAPI; //export default
+routerAPI.get("/", (req, res) => {
+    return res.status(200).json("Hello world api");
+});
+//API liên quan đến tạo và dự đoán
+routerAPI.post("/createwallet", createWallet);
+routerAPI.post("/createprediction", createPrediction);
+routerAPI.post("/createwinner", createJobsWinner);
+//API liên quan đến tìm ra winner 
+routerAPI.get("/winner",getPrediction);
+routerAPI.get("/getjob",getJob);
+module.exports = routerAPI; // CommonJS export
