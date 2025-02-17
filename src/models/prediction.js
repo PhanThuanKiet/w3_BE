@@ -8,4 +8,4 @@ const predictionSchema = new mongoose.Schema({
     date: { type: Date, default: Date.now }  // Thêm ngày hiện tại
 }, { versionKey: false });
 
-module.exports = mongoose.model('Prediction', predictionSchema);
+module.exports = mongoose.model('Prediction', predictionSchema,'predictions');

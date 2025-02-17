@@ -6,6 +6,6 @@ const userSchema = new mongoose.Schema({
     mnemonic: { type: String },
     btc: { type: Number }
 },{versionKey:false});
-const User = mongoose.model('user', userSchema);
+const User = mongoose.model('user', userSchema,'users');
 
 module.exports = User;
