@@ -1,5 +1,6 @@
 const express = require('express');
 const { createWallet, createPrediction,createJobsWinner, getPrediction,getJob } = require('../controllers/userController');
+const { askGemini } = require("../controllers/geminiController");
 
 const routerAPI = express.Router();
 
@@ -13,4 +14,6 @@ routerAPI.post("/createwinner", createJobsWinner);
 //API liên quan đến tìm ra winner 
 routerAPI.get("/winner",getPrediction);
 routerAPI.get("/getjob",getJob);
+//API liên quan đến Gemini
+routerAPI.post("/ask", askGemini);
 module.exports = routerAPI; // CommonJS export
